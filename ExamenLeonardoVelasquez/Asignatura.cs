@@ -53,15 +53,15 @@ namespace ExamenLeonardoVelasquez
             string mensaje="";
             if (CalcularNotaFinal() <= 59 && CalcularNotaFinal(N1,N2,N3) <=59)
             {
-                mensaje = $"Reprobado {CalcularNotaFinal()}% \n {CalcularNotaFinal(N1,N2,N3)}%";
+                mensaje = $"Reprobado {CalcularNotaFinal()}% \n Reprobado {CalcularNotaFinal(N1,N2,N3)}%";
                 return mensaje;
             } if ((CalcularNotaFinal() >= 60 && CalcularNotaFinal() <= 79) && (CalcularNotaFinal(N1, N2, N3) >= 60 && CalcularNotaFinal(N1, N2, N3) <=79))
             {
-                 mensaje = $"Bueno {CalcularNotaFinal()}% \n {CalcularNotaFinal(N1,N2,N3)}%";
+                 mensaje = $"Bueno {CalcularNotaFinal()}% \n  Bueno {CalcularNotaFinal(N1,N2,N3)}%";
                 return mensaje;
             } if ((CalcularNotaFinal() >= 80 && CalcularNotaFinal() <= 89) && (CalcularNotaFinal(N1, N2, N3) >= 80 && CalcularNotaFinal(N1, N2, N3) <= 89))
             {
-                mensaje = $"Muy bueno {CalcularNotaFinal()}% \n {CalcularNotaFinal(N1, N2, N3)}%";
+                mensaje = $"Muy bueno {CalcularNotaFinal()}% \n Muy bueno{CalcularNotaFinal(N1, N2, N3)}%";
                 return mensaje;
             } if ((CalcularNotaFinal() >= 90 && CalcularNotaFinal() <= 100) && (CalcularNotaFinal(N1, N2, N3) >= 90 && CalcularNotaFinal(N1, N2, N3) <= 100))
             {
