@@ -10,14 +10,17 @@ namespace ExamenLeonardoVelasquez
 
         }
 
-        public Asignatura(int n1, int n2, int n3, string nombreAsignatura, string horario, string nombreDocente)
+        public Asignatura(int N1, int N2, int N3, string NombreAsignatura, string Horario, string NombreDocente, string NombreAlumno, string NumeroCuenta, string Email)
         {
-            N1 = n1;
-            N2 = n2;
-            N3 = n3;
-            NombreAsignatura = nombreAsignatura;
-            Horario = horario;
-            NombreDocente = nombreDocente;
+            this.N1 = N1;
+            this.N2 = N2;
+            this.N3 = N3;
+            this.NombreAsignatura = NombreAsignatura;
+            this.Horario = Horario;
+            this.NombreDocente = NombreDocente;
+            this.NombreAlumno = NombreAlumno;
+            this.NumeroCuenta = NumeroCuenta;
+            this.Email = Email;
         }
 
         public int N1;
@@ -32,14 +35,14 @@ namespace ExamenLeonardoVelasquez
 
         public double CalcularNotaFinal()
         {
-            double nota= (N1+ N2 + N3)/3;
+            double nota= (N1+ N2 + N3);
             
             return nota;
         }
 
         public double CalcularNotaFinal(double nota1, double nota2, double nota3)
         {
-            double nota= (N1 + N2 + N3)/3;
+            double nota= (N1 + N2 + N3);
 
             return nota;
         }
@@ -50,19 +53,19 @@ namespace ExamenLeonardoVelasquez
             string mensaje="";
             if (CalcularNotaFinal() <= 59 && CalcularNotaFinal(N1,N2,N3) <=59)
             {
-                mensaje = $"Reprobado {CalcularNotaFinal()} \n {CalcularNotaFinal(N1,N2,N3)}";
+                mensaje = $"Reprobado {CalcularNotaFinal()}% \n {CalcularNotaFinal(N1,N2,N3)}%";
                 return mensaje;
             } if ((CalcularNotaFinal() >= 60 && CalcularNotaFinal() <= 79) && (CalcularNotaFinal(N1, N2, N3) >= 60 && CalcularNotaFinal(N1, N2, N3) <=79))
             {
-                 mensaje = $"Bueno {CalcularNotaFinal()} \n {CalcularNotaFinal(N1,N2,N3)}";
+                 mensaje = $"Bueno {CalcularNotaFinal()}% \n {CalcularNotaFinal(N1,N2,N3)}%";
                 return mensaje;
             } if ((CalcularNotaFinal() >= 80 && CalcularNotaFinal() <= 89) && (CalcularNotaFinal(N1, N2, N3) >= 80 && CalcularNotaFinal(N1, N2, N3) <= 89))
             {
-                mensaje = $"Muy bueno {CalcularNotaFinal()} \n {CalcularNotaFinal(N1, N2, N3)}";
+                mensaje = $"Muy bueno {CalcularNotaFinal()}% \n {CalcularNotaFinal(N1, N2, N3)}%";
                 return mensaje;
             } if ((CalcularNotaFinal() >= 90 && CalcularNotaFinal() <= 100) && (CalcularNotaFinal(N1, N2, N3) >= 90 && CalcularNotaFinal(N1, N2, N3) <= 100))
             {
-                 mensaje = $"Sobresaliente {CalcularNotaFinal()} \n {CalcularNotaFinal(N1, N2, N3)}";
+                 mensaje = $"Sobresaliente {CalcularNotaFinal()}% \n Sobresaliente {CalcularNotaFinal(N1, N2, N3)}%";
                 return mensaje; 
             }
             return mensaje; 
@@ -71,13 +74,14 @@ namespace ExamenLeonardoVelasquez
         }
         public void Imprimir()
         {
+            Console.WriteLine("*********************************************");
             Console.WriteLine($"Nombre del estudiante:  {NombreAlumno}");
             Console.WriteLine($"Numero de cuenta:  {NumeroCuenta}");
             Console.WriteLine($"Correo Electronico:  {Email}");
             Console.WriteLine($"Nombre de la clase:  {NombreAsignatura}");
             Console.WriteLine($"Horario:  {Horario}");
             Console.WriteLine($"Nombre del docente:  {NombreDocente}");
-            Console.WriteLine($"Notal final:  {MensajeNotalFinal()}");
+            Console.WriteLine($"Notal final :  {MensajeNotalFinal()}");
         }
 
     }
